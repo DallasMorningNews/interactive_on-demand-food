@@ -1,0 +1,92 @@
+.question {
+  margin: 0 auto 2.4rem;
+  max-width: 650px; }
+
+.answerBlock span {
+  width: 48%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  float: left;
+  font-family: "Open Sans", Arial, sans-serif;
+  border: 1px solid #797979;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer; }
+  .answerBlock span:nth-child(even) {
+    margin-right: 0; }
+  .answerBlock span:before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 50%;
+    float: left;
+    margin-right: 10px;
+    position: relative;
+    top: 5px; }
+
+.answerBlock span.checked:before {
+  background-color: red; }
+
+#services {
+  bottom: -50px;
+  width: 100%;
+  background-color: white;
+  z-index: 100;
+  -webkit-transtion: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out; }
+  #services.sticky {
+    position: fixed; }
+  #services.visible {
+    bottom: -1px; }
+
+#doordash, #uber {
+  padding-top: 15px; }
+
+#services ul {
+  list-style-type: none; }
+
+.service {
+  width: 14.28%;
+  display: inline-block;
+  float: left;
+  text-align: center;
+  border-top: 1px solid #797979;
+  border-left: 1px solid #797979;
+  border-bottom: 1px solid #797979;
+  height: 50px;
+  padding: 12px;
+  cursor: pointer;
+  position: relative; }
+  .service:last-of-type {
+    border-right: 1px solid #797979; }
+  .service img {
+    max-height: 20px;
+    margin: 0 auto;
+    max-width: 80%;
+    position: relative;
+    z-index: 100; }
+
+.highlight {
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  background-color: #e1e1e1;
+  -webkit-transtion: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out; }
+
+.noService img {
+  opacity: .2; }
+
+.noShow {
+  display: none; }

@@ -1,0 +1,117 @@
+//  _____           _                    _____ _         _
+// /  __ \         | |                  /  ___| |       | |
+// | /  \/_   _ ___| |_ ___  _ __ ___   \ `--.| |_ _   _| | ___  ___
+// | |   | | | / __| __/ _ \| '_ ` _ \   `--. \ __| | | | |/ _ \/ __|
+// | \__/\ |_| \__ \ || (_) | | | | | | /\__/ / |_| |_| | |  __/\__ \
+//  \____/\__,_|___/\__\___/|_| |_| |_| \____/ \__|\__, |_|\___||___/
+//                                                  __/ |
+//                                                 |___/
+
+@import 'variables';
+@import 'mixins';
+
+.question {
+    margin: 0 auto 2.4rem;
+    max-width: 650px;
+}
+
+.answerBlock {
+    span {
+        width: 48%;
+        margin-right: 2%;
+        margin-bottom: 2%;
+        float: left;
+        font-family: $sans;
+        border: 1px solid $black121;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        &:nth-child(even) {
+            margin-right: 0;
+        }
+        &:before {
+            content: '';
+            display: block;
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 50%;
+            float: left;
+            margin-right: 10px;
+            position: relative;
+            top: 5px;
+        }
+    }
+    span.checked {
+        &:before {
+            background-color: red;
+        }
+    }
+}
+
+#services {
+    bottom: -50px;
+    width: 100%;
+    background-color: white;
+    z-index: 100;
+    @include transition(all, .25s, ease-out);
+    &.sticky {
+        position: fixed;
+    }
+    &.visible {
+        bottom: -1px;
+    }
+}
+
+#doordash, #uber {
+    padding-top: 15px;
+}
+#services ul {
+    list-style-type: none;
+}
+
+.service {
+    width: 14.28%;
+    display: inline-block;
+    float: left;
+    text-align: center;
+    border-top: 1px solid $black121;
+    border-left: 1px solid $black121;
+    border-bottom: 1px solid $black121;
+    height: 50px;
+    padding: 12px;
+    cursor: pointer;
+    position: relative;
+    &:last-of-type {
+        border-right: 1px solid $black121;
+    }
+    img {
+        max-height: 20px;
+        margin: 0 auto;
+        max-width: 80%;
+        position: relative;
+        z-index: 100;
+    }
+}
+.highlight {
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    background-color: $black225;
+    @include transition(all, .25s, ease-out);
+}
+
+.noService img {
+    opacity: .2;
+}
+
+.validator {
+}
+.noShow {
+    display: none;
+}
