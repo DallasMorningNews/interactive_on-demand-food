@@ -40,7 +40,7 @@
 	<link rel="shortcut icon" type="image/x-icon" href="http://www.dallasnews.com/favicon-premium.ico"/>
 	<link rel="stylesheet" type="text/css" href="http://interactives.templates.statics.s3.amazonaws.com/v1.0/css/share.css"/>
 	<link rel="stylesheet" type="text/css" href="http://interactives.templates.statics.s3.amazonaws.com/v1.0/css/print.css" media="print"/>
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,700italic%7CMerriweather:400,400italic" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,700italic%7CMerriweather:400,400italic,700" rel="stylesheet" type="text/css">
 	<link rel="canonical" href="http://interactives.dallasnews.com/2016/on-demand-food/" />
 
 	<script src="http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
@@ -65,6 +65,7 @@
 	<link rel="stylesheet" type="text/css" href="css/styles-bundle.css" />
 	
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.1.0/d3.min.js"></script>
 
 
 
@@ -148,11 +149,6 @@ googletag.enableServices();
 	<article id="content">
 
 	
-<section id="contentHeader">
-	<img src="images/_defaultImage.jpg" alt="#" />
-	<p class="cutline">Cutline goes here. You can remove this tag if you don't feel the lead image needs a cutline</p>
-</section>
-<!-- end contentHeader -->
 
 <section class="contentWell clearFix">
 
@@ -176,110 +172,89 @@ googletag.enableServices();
 
 
 
-	<p class="intro"><span class="dropcap">A</span>n opening paragraph goes here. orem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fermentum tortor a eleifend sagittis. Quisque laoreet elit vitae turpis aliquet tincidunt. Nulla molestie vitae purus eget dignissim. Quisque blandit nibh lorem, non mollis velit rutrum ac. Pellentesque pharetra mattis luctus.</p>
-
-    </section>
-
-    <div id="dfpAdPositionTop" class="ad"> <!-- to remove bottom and top rules, add class "noRule" -->
-        <p class="adLabel">Advertisement</p>
-        <script type="text/javascript">googletag.display('dfpAdPositionTop');</script>
-    </div>
-    <!-- end adBlock -->
-
-<section class="contentWell">
-
-
-    <div id="questions">
-        <div class="question" data-question="zip">
-            <h6>What is your zip code?</h6>
-            <div class="answerBlock clearFix">
-                <input id="zip" />
-                <p class="invalid validator noShow"><i class="fa fa-times" aria-hidden="true"></i> Please enter a five-digit zip code</p>
-                <p class="valid validator noShow"><i class="fa fa-check" aria-hidden="true"></i></p>
-            </div>
-        </div>
-
-        <div class="question" id="fee">
-            <h6>How much are you willing to spend for delivery?</h6>
-            <div class="answerBlock clearFix">
-                $<input id="feeInput" />
-                <p class="invalid validator noShow"><i class="fa fa-times" aria-hidden="true"></i> Please enter a five-digit zip code</p>
-                <p class="valid validator noShow"><i class="fa fa-check" aria-hidden="true"></i></p>
-            </div>
-        </div>
-
-        <div id="instant" class="question">
-            <h6>Instant delivery</h6>
-            <div class="answerBlock boolean clearFix">
-                <span class="unchecked" data-answer="true">Yes</span>
-                <span class="unchecked" data-answer="false">No</span>
-            </div>
-        </div>
-
-        <div id="groceries" class="question">
-            <h6>Groceries</h6>
-            <div class="answerBlock boolean clearFix">
-                <span class="unchecked" data-answer="true">Yes</span>
-                <span class="unchecked" data-answer="false">No</span>
-            </div>
-        </div>
-
-        <div id="subscription" class="question">
-            <h6>Subscription</h6>
-            <div class="answerBlock boolean clearFix">
-                <span class="unchecked" data-answer="true">Yes</span>
-                <span class="unchecked" data-answer="false">No</span>
-            </div>
-        </div>
-
-        <div id="customer" class="question">
-            <h6>What type of customer are you</h6>
-            <div class="answerBlock multi clearFix">
-                <span class="unchecked">Foodie</span>
-                <span class="unchecked">Hungry</span>
-                <span class="unchecked">Flexible</span>
-                <span class="unchecked">Shopper</span>
-            </div>
-        </div>
-    </div>
+	<p class="chatter">Long gone are the days when restaurant deliveries were limited to pizza or Chinese food. Startups have made it easy to get a cupcake, bowl of ramen and even a filet mignon delivered from the restaurant or bakery kitchen to your doorstep. In the age of on-demand, many companies are jockeying for ways to stand out, such as offering entrees from gourmet restaurants, delivering food at a speedier pace or using a subscription model to waive fees. Answer the questions below to find out which on-demand couriers in the Dallas area are best for you, or <a class="viewAll">view all the couriers:</a></p>
 
 </section>
 
+    <div id="questions">
 
-    <div id="services">
+        <div class="question activeQuestion" data-question="zip">
+            <h5>1. What is your zip code?</h5>
+            <p>We want to make sure we only display those companies that service your area. This information will not be used for any other purpose.</p>
+            <div class="answerBlock clearFix">
+                <input id="zip" placeholder="75201"/>
+                <p class="invalid validator noShow"><i class="fa fa-times" aria-hidden="true"></i> Please enter a five-digit zip code</p>
+                <p class="valid validator noShow"><i class="fa fa-check" aria-hidden="true"></i></p>
+            </div>
+        </div>
 
-        <ul>
-            <li class="service" id="caviar">
-                <img src="images/_caviar.png" alt="Caviar" />
-                <span class="highlight"></span>
-            </li>
-            <li class="service" id="doordash">
-                <img src="images/_doordash.png" alt="DoorDash" />
-                <span class="highlight"></span>
-            </li>
-            <li class="service" id="favor">
-                <img src="images/_favor.png" alt="Favor" />
-                <span class="highlight"></span>
-            </li>
-            <li class="service" id="grubhub">
-                <img src="images/_grubhub.png" alt="Grubhub" />
-                <span class="highlight"></span>
-            </li>
-            <li class="service" id="postmates">
-                <img src="images/_postmates.png" alt="Postmates" />
-                <span class="highlight"></span>
-            </li>
-            <li class="service" id="amazon">
-                <img src="images/_prime.png" alt="Prime" />
-                <span class="highlight"></span>
-            </li>
-            <li class="service" id="uber">
-                <img src="images/_ubereats.png" alt="Uber Eats" />
-                <span class="highlight"></span>
-            </li>
-        </ul>
+        <div class="question inactiveQuestion" id="fee">
+            <h5>2. How much are you willing to spend for delivery?</h5>
+            <p>Delivery fees vary based on factors such as instant delivery and distance from the restaurant.</p>
+            <div class="answerBlock clearFix">
+                <span class="label">$</span><input id="feeInput" placeholder="0"/>
+                <p class="invalid validator noShow"><i class="fa fa-times" aria-hidden="true"></i> Please enter a five-digit zip code</p>
+                <p class="valid validator noShow"><i class="fa fa-check" aria-hidden="true"></i></p>
+            </div>
+        </div>
 
+        <div id="instant" class="question inactiveQuestion">
+            <h5>3. What is a higher priority: speed or variety?</h5>
+            <p>Some services offer an option for delivery in 10 minutes or less, usually at a slightly higher premium charge and fewer options to choose from.</p>
+            <div class="answerBlock boolean clearFix">
+                <span class="unchecked answer" data-answer="true">Speed</span>
+                <span class="unchecked answer" data-answer="false">Variety</span>
+            </div>
+        </div>
+
+        <div id="groceries" class="question inactiveQuestion">
+            <h5>4. Are you looking for more than just takeout?</h5>
+            <p>For example, do you want to pay for a service that may also deliver groceries, or other household or consumer items?</p>
+            <div class="answerBlock boolean clearFix">
+                <span class="unchecked answer" data-answer="true">Yes</span>
+                <span class="unchecked answer" data-answer="false">No</span>
+            </div>
+        </div>
+
+        <div id="subscription" class="question inactiveQuestion">
+            <h5>5. Do you want a subscription model?</h5>
+            <p>Some services offer a subscription model, where you pay a yearly subscription fee to have access to their delivery servies.</p>
+            <div class="answerBlock boolean clearFix">
+                <span class="unchecked answer" data-answer="true">Yes</span>
+                <span class="unchecked answer" data-answer="false">No</span>
+            </div>
+        </div>
+
+        <div id="customer" class="question inactiveQuestion">
+            <h5>6. What type of customer are you?</h5>
+            <p>Which of the following best describe what you’re looking for in a takeout delivery service:</p>
+            <div class="answerBlock multi clearFix">
+                <span class="unchecked answer">Foodie</span>
+                <span class="unchecked answer">Hungry</span>
+                <span class="unchecked answer">Flexible</span>
+                <span class="unchecked answer">Shopper</span>
+            </div>
+        </div>
+
+        <nav id="questionsNav">
+            <span class="switcher noShow inactive" id="previous"><i class="fa fa-arrow-left"></i></span>
+            <span class="viewResults">View results</span>
+            <span class="switcher inactive" id="next"><i class="fa fa-arrow-right"></i></span>
+        </nav>
     </div>
+
+    <section class="contentWell">
+
+    <section id="servicesBlock" class="noShow">
+        <header id="best" class="noShow">
+            <h5>Best matches based on your zip code:</h5>
+        </header>
+        <div id="services"></div>
+        <nav>
+            <button class="retake noShow">Retake quiz</button>
+            <button class="viewAll noShow">View all</button>
+        </nav>
+    </section>
 
 <section class="contentWell">
   <!--
@@ -316,6 +291,17 @@ googletag.enableServices();
 		</a>
 	</section>
 	<!-- end more -->
+
+    </section>
+
+    <div id="dfpAdPositionTop" class="ad"> <!-- to remove bottom and top rules, add class "noRule" -->
+        <p class="adLabel">Advertisement</p>
+        <script type="text/javascript">googletag.display('dfpAdPositionTop');</script>
+    </div>
+    <!-- end adBlock -->
+
+<section class="contentWell">
+
 
 		<div class="shareComments">
 		<ul id="share-bar2" class="width-auto-hack"></ul>

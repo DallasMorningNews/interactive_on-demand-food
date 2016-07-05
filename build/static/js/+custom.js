@@ -19,7 +19,7 @@ $(document).ready(function() {
 		{
 			"id": "uber",
 			"name": "Uber Eats",
-			"zips": [75228],
+			"zips": [75202, 75201, 75226, 75204, 75207, 75219, 75230, 75214, 75206],
 			"instant": true,
 			"subscription": false,
 			"groceries": false,
@@ -27,7 +27,19 @@ $(document).ready(function() {
 			"favorite": "",
 			"customer": ["Flexible", "Hungry"],
 			"score": 0,
-			"service_area": true
+			"service_area": true,
+			"copy": {
+				"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam finibus, eros ac rhoncus elementum, augue orci tempor mi, non condimentum neque nunc at turpis. ",
+				"schedule": "—",
+				"common_orders": "—",
+				"other_services": "No",
+				"fees": "$2.99 to $3.99",
+				"typical_meal": "$8 to $12*",
+				"time": "—",
+				"instant_delivery": "Yes",
+				"subscription": "No",
+				"disclaimer": "*Instant meals range from $8 to $12."
+			}
 		},
 		{
 			"id": "caviar",
@@ -40,12 +52,24 @@ $(document).ready(function() {
 			"favorite": ["Pizza", "Ramen"],
 			"customer": ["Foodie"],
 			"score": 0,
-			"service_area": true
+			"service_area": true,
+			"copy": {
+				"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam finibus, eros ac rhoncus elementum, augue orci tempor mi, non condimentum neque nunc at turpis.",
+				"schedule": "Everyday, 9 a.m. to 9 p.m.",
+				"common_orders": "Neopolitan pizza from Cane Rosso; Ramen from Monkey King Noodle Co.; Comfort food from Dallas Grilled Cheese, and Hot dogs from Luscher's Red Hots",
+				"other_services": "No",
+				"fees": "$0 to $4.99*",
+				"typical_meal": "—",
+				"time": "25 - 40 minutes",
+				"instant_delivery": "No",
+				"subscription": "No",
+				"disclaimer": "*Price is dependent on distant from the restaurant"
+			}
 		},
 		{
 			"id": "grubhub",
 			"name": "GrubHub",
-			"zips": [75230],
+			"zips": [ 75201, 75202, 75203, 75204, 75205, 75206, 75207, 75208, 75209, 75210, 75212, 75214, 75215, 75218, 75219, 75220, 75223, 75225, 75226, 75227, 75228, 75229, 75230, 75231, 75234, 75235, 75238, 75240, 75243, 75244, 75246, 75247, 75248, 75251, 75252, 75254, 75261, 75287],
 			"instant": false,
 			"subscription": true,
 			"groceries": false,
@@ -53,7 +77,19 @@ $(document).ready(function() {
 			"favorite": ["Tex-Mex"],
 			"customer": ["Flexible"],
 			"score": 0,
-			"service_area": true
+			"service_area": true,
+			"copy": {
+				"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam finibus, eros ac rhoncus elementum, augue orci tempor mi, non condimentum neque nunc at turpis.",
+				"schedule": "Restaurants choose their hours of operation and delivery",
+				"common_orders": "Tex-Mex and Southwest food, especially food from Primo's Tex-Mex",
+				"other_services": "No",
+				"fees": "—",
+				"typical_meal": "About $30",
+				"time": "About 40 minutes",
+				"instant_delivery": "No",
+				"subscription": "No",
+				"disclaimer": ""
+			}
 		},
 		{
 			"id":  "postmates",
@@ -66,12 +102,24 @@ $(document).ready(function() {
 			"favorite": ["Fast Food"],
 			"customer": ["On-demand"],
 			"score": 0,
-			"service_area": true
+			"service_area": true,
+			"copy": {
+				"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam finibus, eros ac rhoncus elementum, augue orci tempor mi, non condimentum neque nunc at turpis.",
+				"schedule": "All day, every day",
+				"common_orders": "Mexican food, Orders from Chipotle, Whataburger and Raising Cane’s Chicken Fingers",
+				"other_services": "Yes",
+				"fees": "$3.99 and up*",
+				"typical_meal": "About $25",
+				"time": "About 30 minutes",
+				"instant_delivery": "No",
+				"subscription": "Yes",
+				"disclaimer": "*$3.99 for Plus Merchants, $6 and up depending on distance"
+			}
 		},
 		{
 			"id": "favor",
 			"name": "Favor",
-			"zips": [75229],
+			"zips": [75201, 75202, 75204, 75205, 75206, 75246, 75219, 75226, 75225, 75214, 75209, 75235, 75207, 75208, 75230],
 			"instant": false,
 			"subscription": true,
 			"groceries": true,
@@ -79,7 +127,19 @@ $(document).ready(function() {
 			"favorite": ["Tacos", "Sushi", "Fast Food"],
 			"customer": ["Hungry", "Shopper"],
 			"score": 0,
-			"service_area": true
+			"service_area": true,
+			"copy": {
+				"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam finibus, eros ac rhoncus elementum, augue orci tempor mi, non condimentum neque nunc at turpis.",
+				"schedule": "",
+				"common_orders": "Tacos, sushi and fast-food; Tacos at Velvet Taco and sandwiches from East Hampton",
+				"other_services": "Yes",
+				"fees": "$5",
+				"typical_meal": "About $30",
+				"time": "About 35 minutes",
+				"instant_delivery": "No",
+				"subscription": "No",
+				"disclaimer": ""
+			}
 		},
 		{
 			"id": "amazon",
@@ -92,7 +152,19 @@ $(document).ready(function() {
 			"favorite": [""],
 			"customer": ["Hungry"],
 			"score": 0,
-			"service_area": true
+			"service_area": true,
+			"copy": {
+				"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam finibus, eros ac rhoncus elementum, augue orci tempor mi, non condimentum neque nunc at turpis.",
+				"schedule": "Every day, 8 a.m. to 10 p.m.",
+				"common_orders": "Groceries such as water, eggs and orange juice",
+				"other_services": "Yes — including groceries from Sprouts.",
+				"fees": "$0, $7.99*",
+				"typical_meal": "—",
+				"time": "—",
+				"instant_delivery": "No",
+				"subscription": "Yes",
+				"disclaimer": "* One-hour delivery is $7.99"
+			}
 		},
 		{
 			"id": "doordash",
@@ -105,7 +177,19 @@ $(document).ready(function() {
 			"favorite": ["Mexican"],
 			"customer": [""],
 			"score": 0,
-			"service_area": true
+			"service_area": true,
+			"copy": {
+				"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam finibus, eros ac rhoncus elementum, augue orci tempor mi, non condimentum neque nunc at turpis.",
+				"schedule": "11 a.m. to 10 p.m. in Dallas area, select areas 7 a.m to 1 a.m.",
+				"common_orders": "Mexican food, Pad Thai, Velvet Taco",
+				"other_services": "No",
+				"fees": "$1.99 to $6.99",
+				"typical_meal": "More than $30",
+				"time": "30 to 40 minutes",
+				"instant_delivery": "No",
+				"subscription": "No",
+				"disclaimer": ""
+			}
 		}
 	];
 
@@ -139,7 +223,6 @@ $(document).ready(function() {
 			thisObj.siblings().removeClass("checked");
 		}
 
-
 		updateServices(thisObj);
 	}
 
@@ -157,7 +240,6 @@ $(document).ready(function() {
 	});
 
 	$("#feeInput").blur(function() {
-		console.log("blur");
 		validateInput($(this));
 		updateServices($(this));
 	});
@@ -176,7 +258,7 @@ $(document).ready(function() {
 			thisObj.siblings(".valid").removeClass("noShow");
 		}
 
-		// then check if the input is the zip input and the length is 5
+		// then check if the input is the zip input and the length is not 5
 		// if it is, show the invalid label
 		if (thisObj.attr("id") === "zip" && thisObj.val().length !== 5) {
 			thisObj.siblings(".invalid").removeClass("noShow");
@@ -193,6 +275,7 @@ $(document).ready(function() {
 
 		// lastly, check if the field is empty
 		if (thisObj.val() === "") {
+
 			// if the field is empty, remove both valid and invalid flags
 			thisObj.siblings(".validator").addClass("noShow");
 
@@ -214,8 +297,6 @@ $(document).ready(function() {
 		}
 
 	}
-
-
 
 
 	////////////////////////////////////////////////////
@@ -246,7 +327,6 @@ $(document).ready(function() {
 
 	// updating the score for each service
 	function runScores() {
-		console.log(user);
 		// for each service, set a score variable to 0
 		$.each(services, function(k,v) {
 			var score = 0;
@@ -254,12 +334,13 @@ $(document).ready(function() {
 			// if the service's service_area is false, fade that service back and
 			// set it's highlight div's width to 0
 			// else, fade that service back in
-			if (v.service_area === false) {
-				$("#" + v.id).addClass("noService");
-				$("#" + v.id).children(".highlight").css("width", 0);
-			} else {
-				$("#" + v.id).removeClass("noService");
-			}
+
+			// if (v.service_area === false) {
+			// 	$("#" + v.id).addClass("noService");
+			// 	$("#" + v.id).children(".highlight").css("width", 0);
+			// } else {
+			// 	$("#" + v.id).removeClass("noService");
+			// }
 
 			// check the other user keys against the services and adjusts the scores
 			if (v.instant === user.instant) {
@@ -350,29 +431,254 @@ $(document).ready(function() {
 	}
 
 
-	// controlling the services bar on window scroll
-	// tldr: if the top of the questions div is above the bottom of the window
-	// and the bottom of the questions div is below the bottom of the window
-	// make the services bar sticky
-	
-	$(window).scroll(function() {
-		var questionsTop = $("#questions").offset().top;
-		var questionsHeight = $("#questions").height();
 
-		var windowHeight = $(window).height();
-		var windowBottom = $(window).scrollTop() + windowHeight;
 
-		if (windowBottom > questionsTop && windowBottom < questionsTop + questionsHeight) {
-			$("#services").addClass("sticky").addClass("visible");
-		} else {
-			$("#services").removeClass("sticky").removeClass("visible");
-		}
+
+
+
+	$(".viewAll").click(function() {
+		$("#servicesBlock nav button").addClass("noShow");
+		displayServices(services);
 	});
 
 
+	var questionNumber = 0,
+		questionLength = 6;
+
+	var areaMatch = [];
+	var bestMatch = [];
 
 
+	$(".switcher").on("click", function() {
+		var direction = $(this).attr("id");
+		changeQuestion(direction);
+	});
 
+	$(document).keypress(function(e) {
+	    if(e.which == 13) {
+	        changeQuestion("next");
+	    }
+});
+
+	function changeQuestion(direction) {
+		if (direction === "next" && questionNumber !== questionLength - 1) {
+			questionNumber++;
+		} else if (direction === "previous") {
+			questionNumber--;
+		} else {
+			findAreaMatch();
+		}
+
+		if (questionNumber === 0) {
+			$("#previous").addClass("noShow");
+		} else {
+			$("#previous").removeClass("noShow");
+		}
+
+		$(".question").addClass("inactiveQuestion");
+
+		$(".question").eq(questionNumber).removeClass("inactiveQuestion").addClass("activeQuestion");
+
+	}
+
+	function findAreaMatch() {
+		areaMatch = [];
+		$.each(services, function(k,v) {
+			if (v.service_area === true) {
+				areaMatch.push(v);
+			}
+		});
+
+		findBestMatch();
+	}
+
+	function findBestMatch() {
+
+		var topScore = 0;
+		bestMatch = [];
+		$.each(areaMatch, function(k,v) {
+			if (v.score > topScore) {
+				topScore = v.score;
+			}
+		});
+
+		$.each(areaMatch, function(k,v) {
+			if (v.score >= topScore) {
+				bestMatch.push(v);
+			}
+		});
+
+		$("#services").removeClass("noShow");
+		$("#best").removeClass("noShow");
+		$(".retake").removeClass("noShow");
+
+		displayServices(bestMatch);
+
+	}
+
+	function displayServices(data) {
+		$(".service").remove();
+		console.log(data);
+
+
+		if (data.length < 7) {
+			$(".viewAll").removeClass("noShow");
+		}
+
+		$("#servicesBlock").removeClass("noShow");
+
+		var serviceTop = $("#services").offset().top;
+		$("html, body").animate({
+			scrollTop: serviceTop - 50
+		}, 250);
+
+		var services = d3.select("#services").selectAll(".service")
+			.data(data)
+			.enter()
+			.append("div")
+			.attr("class", "clearFix service");
+
+		services.append("img")
+			.attr("src", function(d) {
+				return "images/_" + d.id +".png";
+			})
+			.attr("alt", function(d) {
+				return d.name + " logo";
+			});
+
+		var content = services.append("div")
+			.attr("class", "content clearFix");
+
+		var details = content.append("div")
+			.attr("class", "details");
+
+		details.append("p")
+			.html(function(d) {
+				return d.copy.description;
+			});
+
+		details.append("p")
+			.html(function(d) {
+				return "<strong>Schedule: </strong>" + d.copy.schedule;
+			});
+
+		details.append("p")
+			.html(function(d) {
+				return "<strong>Common orders: </strong>" + d.copy.common_orders;
+			});
+
+		details.append("p")
+			.html(function(d) {
+				return "<strong>Common orders: </strong>" + d.copy.other_services;
+			});
+
+
+		var periphs = content.append("div")
+			.attr("class", "periphs");
+
+		periphs.append("h6").text("Fees");
+		periphs.append("p").text(function(d) {
+			return d.copy.fees;
+		});
+
+		periphs.append("h6").text("Typical meal $");
+		periphs.append("p").text(function(d){
+			return d.copy.typical_meal;
+		});
+
+		periphs.append("h6").text("Delivery time");
+		periphs.append("p").text(function(d) {
+			return d.copy.time;
+		});
+
+		periphs.append("h6").text("Instant delivery");
+		periphs.append("p").text(function(d) {
+			return d.copy.instant_delivery;
+		});
+
+		periphs.append("h6").text("Subscription");
+		periphs.append("p").text(function(d) {
+			return d.copy.subscription;
+		});
+
+		content.append("p").attr("class", "disclaimer")
+			.text(function(d) {
+				var c = "";
+
+				if (d.copy.disclaimer.length > 0) {
+					c = d.copy.disclaimer;
+				}
+
+				return c;
+
+			});
+
+		setCardHeights();
+
+
+	}
+
+
+	function setCardHeights() {
+		var h = 0;
+
+		console.log($("#questions").height());
+
+		$(".service").each(function() {
+			console.log($(this).outerHeight());
+			h = h > $(this).outerHeight() ? h : $(this).outerHeight();
+		});
+
+		$(".service").css("min-height", h + 30);
+
+	}
+
+
+	function clearQuiz() {
+
+		//resets all the scores and service areas
+		$.each(services, function(k,v) {
+			v.score = 0;
+			v.service_area = true;
+		});
+
+		$("#servicesBlock").addClass("noShow");
+
+		// scrolls the window to the questions div
+		var questionsTop = $("#questions").offset().top;
+
+		$("html, body").animate({
+			scrollTop: questionsTop - 50
+		}, 250);
+
+		//resets the question counter to 0, hides the previous button
+		questionNumber = 0;
+		$(".question").addClass("inactiveQuestion");
+		$(".question").eq(questionNumber).removeClass("inactiveQuestion").addClass("activeQuestion");
+		$("#previous").addClass("noShow");
+		$(".validator").addClass("noShow");
+
+		// clear the input fields
+		$("#zip").val("");
+		$("#feeInput").val("");
+
+		// clear all the checked options
+		$(".checked").addClass(".unchecked").removeClass("checked");
+
+		// clear the user object
+		user.instant = "";
+		user.groceries = "";
+		user.subscription = "";
+		user.customer = [];
+		user.fee = 10000;
+
+		console.log(services, user);
+
+	}
+
+	$(".retake").click(function() {
+		clearQuiz();
+	});
 
 
 });
