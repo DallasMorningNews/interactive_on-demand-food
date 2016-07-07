@@ -16,18 +16,38 @@
     height: auto;
     position: relative;
     @include transition(all, .25s, ease-out);
-    min-height: 350px;
+    min-height: 450px;
     color: white;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#607848+0,789048+100 */
-    background: #607848; /* Old browsers */
-    background: -moz-linear-gradient(top,  #607848 0%, #789048 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top,  #607848 0%,#789048 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom,  #607848 0%,#789048 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#607848', endColorstr='#789048',GradientType=0 ); /* IE6-9 */
-    @media(max-height: 700px) {
-        height: 100vh;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/$orange+0,789048+100 */
+    background: $orange; /* Old browsers */
+    background: -moz-linear-gradient(top,  $orange 0%, darken($orange, 10) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  $orange 0%,darken($orange, 10) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  $orange 0%,darken($orange, 10) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$orange', endColorstr='darken($orange, 10)',GradientType=0 ); /* IE6-9 */
+    a.viewAll {
+        color: white;
+        @include type(1.4rem, 2.4rem, 0);
+        font-weight: normal;
+        position: absolute;
+        bottom: 1.2rem;
+        width: 280px;
+        text-align: center;
+        padding: 5px;
+        left: 50%;
+        margin-left: -140px;
+        cursor: pointer;
     }
-
+    @media(max-height: 700px) {
+        min-height: 100vh;
+        a.viewAll {
+            position: relative;
+            left: auto;
+            bottom: auto;
+            margin: 0 auto;
+            display: inline-block;
+            width: 100%;
+        }
+    }
 }
 
 #questionsNav {
@@ -39,7 +59,7 @@
     position: absolute;
     width: 100%;
     height: 40px;
-    bottom: 4.8rem;
+    bottom: 7.2rem;
     left: calc((100% - 650px) / 2);
     span {
         width: 40px;
@@ -53,14 +73,34 @@
         @include transition(all, .25s, ease-out);
         &:hover {
             background-color: white;
-            color: #607848;
+            color: $orange;
         }
+        &.viewResults {
+            border: none;
+            text-align: right;
+            width: auto;
+            right: 50px;
+            line-height: 40px;
+            font-size: 1.6rem;
+            &:hover {
+                background-color: initial !important;
+                color: white !important;
+            }
+        }
+    }
+    @media (max-width: 770px) {
+        left: 5%;
+        bottom: 2.4rem;
+        margin-top: 6rem;
+        width: 90%;
+
     }
     @media (max-height: 700px) {
         position: relative;
         left: auto;
         bottom: auto;
-        margin-top: 6rem;
+        margin: 6rem  1.2rem;
+        width: 100%;
     }
 }
 #previous {
@@ -82,7 +122,7 @@
 .question {
     margin: 0 auto;
     max-width: 650px;
-    h5 {
+    h4 {
         font-weight: bold;
         font-family: $sans;
         margin-bottom: 1.2rem;
@@ -123,7 +163,7 @@
         font-family: $sans;
         border-radius: 5px;
         padding: 0 5px;
-        @include type(1.6rem, 40px, 0);
+        @include type(1.4rem, 40px, 1.2rem);
         cursor: pointer;
         border: 2px solid white;
         display: block;
@@ -135,17 +175,61 @@
         }
         &:hover {
             background-color: white;
-            color: #607848;
+            color: $orange;
         }
     }
     .answer.checked {
         background-color: white;
-        color: #607848;
+        color: $orange;
+    }
+    @media (max-width: 550px) {
+        .answer {
+            width: 48%;
+            margin-right: 4%;
+            &:nth-child(4n+4) {
+                margin-right: 4%;
+            }
+            &:nth-child(2n+2) {
+                margin-right: 0;
+            }
+        }
     }
 }
 #fee input {
     width: 198px;
 }
+
+#instant .answer {
+    width: 18%;
+    margin-right: 2.5%;
+    &:last-of-type {
+        margin-right: 0;
+    }
+}
+
+
+#progressContainer {
+    display: block;
+    width: 100%;
+    max-width: 650px;
+    height: 10px;
+    background-color: rgba(255,255,255,.3);
+    margin: 0 auto 2.4rem;
+    position: relative;
+}
+
+#progressBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    @include transition(all, .25s, ease-out);
+    background-color: white;
+    height: 10px;
+}
+
+
+
 #servicesBlock {
     h5 {
         font-weight: bold;
@@ -159,7 +243,7 @@
 
 .service {
     padding: 15px;
-    background-color: $black235;
+    background-color: rgb(248,245,240);
     width: 31.5%;
     margin: 0 2% 2% 0;
     float: left;
@@ -176,12 +260,17 @@
     img {
         margin-bottom: 1.2rem;
         clear: both;
-        max-height: 30px;
-
+        max-height: 25px;
+        display: block;
     }
     p {
         font-family: $sans;
-        @include type(1.3rem, 1.8rem, 1.8rem);
+        @include type(1.3rem, 1.8rem, .9rem);
+    }
+    .label {
+        text-transform: uppercase;
+        color: $black66;
+        font-weight: bold;
     }
     h6 {
         font-family: $sans;
@@ -190,6 +279,13 @@
         border-bottom: 1px solid $black66;
         display: inline-block;
         font-size: 1.5rem;
+    }
+    a {
+        display: inline-block;
+        font-family: $sans;
+        @include type(1.4rem, 1.8rem, 1.8rem);
+        font-weight: 400;
+        text-decoration: underline;
     }
 }
 
@@ -211,6 +307,82 @@
     font-style: italic;
 }
 
+@media (max-width: 1300px) {
+    .details, .periphs {
+        width: 100%;
+        float: none;
+        border-right: none;
+    }
+}
+
+@media (max-width: 1100px) {
+    .service {
+        width: 48%;
+        margin-right: 2%;
+        &:nth-of-type(3n+3) {
+            margin-right: 2%;
+        }
+        &:nth-of-type(3n+4) {
+            clear: none;
+        }
+        &:nth-of-type(2n+2) {
+            margin-right: 0;
+        }
+        &:nth-of-type(2n+3) {
+            clear: left;
+        }
+    }
+    .details {
+        float: left;
+        width: calc(100% - 140px);
+        border-right: 1px solid $black235;
+    }
+    .periphs {
+        width: 120px;
+        float: right;
+    }
+}
+
+@media (max-width: 900px) {
+    .details, .periphs {
+        width: 100%;
+        float: none;
+        border-right: none;
+    }
+}
+
+@media (max-width: 700px) {
+    .service {
+        width: 99%;
+        margin-right: 0%;
+        margin-bottom: 2.4rem;
+        &:nth-of-type(2n+2) {
+            margin-right: 0;
+        }
+        &:nth-of-type(2n+3) {
+            clear: none;
+        }
+    }
+    .details {
+        float: left;
+        width: calc(100% - 140px);
+        border-right: 1px solid $black235;
+    }
+    .periphs {
+        width: 120px;
+        float: right;
+    }
+}
+
+@media (max-width: 450px) {
+    .details, .periphs {
+        width: 100%;
+        float: none;
+        border-right: none;
+    }
+}
+
+
 #servicesBlock nav {
     display: block;
     clear: both;
@@ -224,7 +396,7 @@
     width: 140px;
     height: 40px;
     margin-right: 10px;
-    background-color: $green;
+    background-color: $orange;
     color: white;
     border: none;
     border-radius: 5px;
@@ -236,7 +408,7 @@
         margin-right: 0;
     }
     &:hover {
-        background-color: $lightgreen;
+        background-color: darken($orange, 10);
     }
 }
 
@@ -254,8 +426,10 @@
 .contentWell .chatter {
     font-family: $sans;
     font-size: 1.4rem;
+    a {
+        cursor: pointer;
+    }
 }
-
 
 .inactiveQuestion {
     display: none;

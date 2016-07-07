@@ -1,7 +1,5 @@
 $(document).ready(function() {
 
-	//custom scripting goes here
-
 	// injecting current year into footer
 	// DO NOT DELETE
 
@@ -10,57 +8,68 @@ $(document).ready(function() {
 
 	$('.copyright').text(year);
 
+	setTimeout(function(){
+		$("#storyHead").addClass("moved");
+	}, 500);
 
-	// some code blocks require javascript to function, like slideshows, synopsis blocks, etc
-	// you can find that code here: https://github.com/DallasMorningNews/generator-dmninteractives/wiki/Cookbook
 
+	// WHAT I'M MISSING
+
+	//
+	// Caviar
+	// Typical meal price, zip codes
+	//
+	// Amazon
+	// typical meal price, average delivery time, zip codes
 
 	var services = [
 		{
 			"id": "uber",
 			"name": "Uber Eats",
 			"zips": [75202, 75201, 75226, 75204, 75207, 75219, 75230, 75214, 75206],
-			"instant": true,
+			"instant": 5,
 			"subscription": false,
-			"groceries": false,
+			"more": false,
 			"fee": [2.99, 3.99],
-			"favorite": "",
-			"customer": ["Flexible", "Hungry"],
+			"customer": ["Fast", "Affordable", "Easy"],
 			"score": 0,
 			"service_area": true,
 			"copy": {
-				"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam finibus, eros ac rhoncus elementum, augue orci tempor mi, non condimentum neque nunc at turpis. ",
-				"schedule": "—",
-				"common_orders": "—",
+				"description": "You are all about efficiency, and may already be familiar with apps that get you what you need quickly. Uber Eats offers instant delivery on a limited number of food items. That means you can have your dinner at your door within XXX minutes — so long as you're not a picky eater.",
+				"weburl": "https://ubereats.com/dallas/",
+				"website": "ubereats.com/dallas",
+				"schedule": "UberEATS is available 24/7. Instant delivery is available 11 a.m. to 2 p.m., Monday through Friday.",
+				"common_orders": "American, Indian and Thai",
 				"other_services": "No",
 				"fees": "$2.99 to $3.99",
 				"typical_meal": "$8 to $12*",
-				"time": "—",
+				"time": "Instant delivery is 10 minutes or less.",
 				"instant_delivery": "Yes",
 				"subscription": "No",
-				"disclaimer": "*Instant meals range from $8 to $12."
+				"disclaimer": "*Instant meals range from $8 to $12 and can be delivered in 10 minutes or less."
 			}
 		},
 		{
 			"id": "caviar",
 			"name": "Caviar",
 			"zips": [75229],
-			"instant": false,
-			"subscription": true,
-			"groceries": false,
+			"instant": 4,
+			"subscription": false,
+			"more": false,
 			"fee": [0, 4.99],
-			"favorite": ["Pizza", "Ramen"],
-			"customer": ["Foodie"],
+			"customer": ["Gourmet", "Upscale", "Adventurous"],
 			"score": 0,
 			"service_area": true,
 			"copy": {
-				"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam finibus, eros ac rhoncus elementum, augue orci tempor mi, non condimentum neque nunc at turpis.",
+				"description": "Even if you are a foodie, you don't always have time to make a gourmet meal and sometimes you feel like staying in. Caviar gives you the option to choose some of the best dishes from your favorite spots, which can add up to a pricier dinner.",
+				"weburl": "https://www.trycaviar.com/dallas",
+				"website": "trycaviar.com/dallas",
 				"schedule": "Everyday, 9 a.m. to 9 p.m.",
 				"common_orders": "Neopolitan pizza from Cane Rosso; Ramen from Monkey King Noodle Co.; Comfort food from Dallas Grilled Cheese, and Hot dogs from Luscher's Red Hots",
 				"other_services": "No",
 				"fees": "$0 to $4.99*",
 				"typical_meal": "—",
-				"time": "25 - 40 minutes",
+				"time": "25 to 40 minutes",
 				"instant_delivery": "No",
 				"subscription": "No",
 				"disclaimer": "*Price is dependent on distant from the restaurant"
@@ -70,20 +79,21 @@ $(document).ready(function() {
 			"id": "grubhub",
 			"name": "GrubHub",
 			"zips": [ 75201, 75202, 75203, 75204, 75205, 75206, 75207, 75208, 75209, 75210, 75212, 75214, 75215, 75218, 75219, 75220, 75223, 75225, 75226, 75227, 75228, 75229, 75230, 75231, 75234, 75235, 75238, 75240, 75243, 75244, 75246, 75247, 75248, 75251, 75252, 75254, 75261, 75287],
-			"instant": false,
-			"subscription": true,
-			"groceries": false,
+			"instant": 1,
+			"subscription": false,
+			"more": false,
 			"fee": [2.99, 2.99],
-			"favorite": ["Tex-Mex"],
-			"customer": ["Flexible"],
+			"customer": ["Affordable", "Late-Night", "Adventurous"],
 			"score": 0,
 			"service_area": true,
 			"copy": {
-				"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam finibus, eros ac rhoncus elementum, augue orci tempor mi, non condimentum neque nunc at turpis.",
+				"description": "You like ordering and receiving deliveries from your neighborhood restaurants and favorite spots around town.",
+				"weburl": "https://www.grubhub.com/",
+				"website": "grubhub.com",
 				"schedule": "Restaurants choose their hours of operation and delivery",
 				"common_orders": "Tex-Mex and Southwest food, especially food from Primo's Tex-Mex",
 				"other_services": "No",
-				"fees": "—",
+				"fees": "$2.99",
 				"typical_meal": "About $30",
 				"time": "About 40 minutes",
 				"instant_delivery": "No",
@@ -92,47 +102,23 @@ $(document).ready(function() {
 			}
 		},
 		{
-			"id":  "postmates",
-			"name": "Postmates",
-			"zips": [75228],
-			"instant": false,
-			"subscription": false,
-			"groceries": false,
-			"fee": [0, 5.00],
-			"favorite": ["Fast Food"],
-			"customer": ["On-demand"],
-			"score": 0,
-			"service_area": true,
-			"copy": {
-				"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam finibus, eros ac rhoncus elementum, augue orci tempor mi, non condimentum neque nunc at turpis.",
-				"schedule": "All day, every day",
-				"common_orders": "Mexican food, Orders from Chipotle, Whataburger and Raising Cane’s Chicken Fingers",
-				"other_services": "Yes",
-				"fees": "$3.99 and up*",
-				"typical_meal": "About $25",
-				"time": "About 30 minutes",
-				"instant_delivery": "No",
-				"subscription": "Yes",
-				"disclaimer": "*$3.99 for Plus Merchants, $6 and up depending on distance"
-			}
-		},
-		{
 			"id": "favor",
 			"name": "Favor",
 			"zips": [75201, 75202, 75204, 75205, 75206, 75246, 75219, 75226, 75225, 75214, 75209, 75235, 75207, 75208, 75230],
-			"instant": false,
-			"subscription": true,
-			"groceries": true,
-			"fee": [7, 7],
-			"favorite": ["Tacos", "Sushi", "Fast Food"],
-			"customer": ["Hungry", "Shopper"],
+			"instant": 4,
+			"subscription": false,
+			"more": true,
+			"fee": [5, 5],
+			"customer": ["Affordable", "Personalized", "Upscale"],
 			"score": 0,
 			"service_area": true,
 			"copy": {
-				"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam finibus, eros ac rhoncus elementum, augue orci tempor mi, non condimentum neque nunc at turpis.",
-				"schedule": "",
+				"description": "You like having dinner delivered to your door, but you also like skipping trips to the convenience store for shampoo or other everyday items.",
+				"weburl": "https://favordelivery.com/city/dallas/",
+				"website": "favordelivery.com",
+				"schedule": "Sun. to Wed.: 8 a.m. to midnight; Thur. to Sat.: 8 a.m. to 3 a.m. ",
 				"common_orders": "Tacos, sushi and fast-food; Tacos at Velvet Taco and sandwiches from East Hampton",
-				"other_services": "Yes",
+				"other_services": "Yes. Get anything delivered. It’s literally their motto.",
 				"fees": "$5",
 				"typical_meal": "About $30",
 				"time": "About 35 minutes",
@@ -142,19 +128,46 @@ $(document).ready(function() {
 			}
 		},
 		{
-			"id": "amazon",
-			"name": "Amazon Prime Now",
-			"zips": [75230],
-			"instant": true,
+			"id":  "postmates",
+			"name": "Postmates",
+			"zips": [75001, 75006, 75075, 75080, 75093, 75201, 75202, 75203, 75204, 75205, 75206, 75207, 75208, 75209, 75214, 75215, 75218, 75219, 75220, 75223, 75225, 75226, 75229, 75230, 75231, 75234, 75235, 75238, 75240, 75243, 75244, 75246, 75247, 75248, 75251, 75252, 75254, 75287 ],
+			"instant": 2,
 			"subscription": true,
-			"groceries": true,
-			"fee": [8.99, 8.99],
-			"favorite": [""],
-			"customer": ["Hungry"],
+			"more": true,
+			"fee": [3.99, 25],
+			"customer": ["Personalized", "Late-Night", "Adventurous"],
 			"score": 0,
 			"service_area": true,
 			"copy": {
 				"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam finibus, eros ac rhoncus elementum, augue orci tempor mi, non condimentum neque nunc at turpis.",
+				"weburl": "https://postmates.com/",
+				"website": "postmates.com",
+				"schedule": "All day, every day",
+				"common_orders": "Mexican food, Orders from Chipotle, Whataburger and Raising Cane’s Chicken Fingers",
+				"other_services": "Delivery of anything sold in any store.",
+				"fees": "$3.99 and up*",
+				"typical_meal": "About $25",
+				"time": "About 30 minutes",
+				"instant_delivery": "No",
+				"subscription": "Yes, $9.99/month*",
+				"disclaimer": "*Anywhere products start at $6 and increase based on distance, with a cap of $25. Plus merchant deliveries are $3.99."
+			}
+		},
+		{
+			"id": "amazon",
+			"name": "Amazon Prime Now",
+			"zips": [75230],
+			"instant": 3,
+			"subscription": true,
+			"more": true,
+			"fee": [0, 7.99],
+			"customer": ["Easy", "Personalized", "Affordable"],
+			"score": 0,
+			"service_area": true,
+			"copy": {
+				"description": "You like having your entertainment on demand, too.",
+				"weburl": "https://primenow.amazon.com/onboard?sourceUrl=%2F",
+				"website": "primenow.amazon.com",
 				"schedule": "Every day, 8 a.m. to 10 p.m.",
 				"common_orders": "Groceries such as water, eggs and orange juice",
 				"other_services": "Yes — including groceries from Sprouts.",
@@ -162,24 +175,25 @@ $(document).ready(function() {
 				"typical_meal": "—",
 				"time": "—",
 				"instant_delivery": "No",
-				"subscription": "Yes",
+				"subscription": "Yes. $99/year or $10.99/month",
 				"disclaimer": "* One-hour delivery is $7.99"
 			}
 		},
 		{
 			"id": "doordash",
 			"name": "DoorDash",
-			"zips": [75228],
-			"instant": false,
+			"zips": [75001, 75002, 75006, 75007, 75010, 75013, 75019, 75022, 75023, 75024, 75025, 75028, 75033, 75034, 75035, 75038, 75039, 75040, 75041, 75042, 75044, 75048, 75050, 75051, 75052, 75054, 75056, 75057, 75060, 75061, 75062, 75063, 75067, 75068, 75069, 75070, 75071, 75074, 75075, 75077, 75078, 75080, 75081, 75082, 75093, 75094, 75099, 75201, 75202, 75203, 75204, 75205, 75206, 75207, 75208, 75209, 75210, 75211, 75212, 75214, 75215, 75216, 75218, 75219, 75220, 75223, 75224, 75225, 75226, 75227, 75228, 75229, 75230, 75231, 75234, 75235, 75237, 75238, 75240, 75241, 75242, 75243, 75244, 75246, 75247, 75248, 75251, 75252, 75254, 75261, 75270, 75275, 75287, 75390, 76001, 76002, 76006, 76010, 76011, 76012, 76013, 76014, 76015, 76016, 76017, 76018, 76021, 76022, 76034, 76036, 76039, 76040, 76051, 76053, 76054, 76060, 76063, 76092, 76102, 76103, 76104, 76105, 76106, 76107, 76108, 76109, 76110, 76111, 76112, 76114, 76115, 76116, 76117, 76118, 76119, 76120, 76123, 76126, 76127, 76129, 76132, 76133, 76134, 76137, 76140, 76148, 76155, 76177, 76180, 76182, 76226, 76227, 76244, 76248, 76262],
+			"instant": 3,
 			"subscription": false,
-			"groceries": false,
+			"more": false,
 			"fee": [1.99, 6.99],
-			"favorite": ["Mexican"],
-			"customer": [""],
+			"customer": ["Upscale", "Adventurous", "Personalized"],
 			"score": 0,
 			"service_area": true,
 			"copy": {
 				"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam finibus, eros ac rhoncus elementum, augue orci tempor mi, non condimentum neque nunc at turpis.",
+				"weburl": "https://www.doordash.com/",
+				"website": "doordash.com",
 				"schedule": "11 a.m. to 10 p.m. in Dallas area, select areas 7 a.m to 1 a.m.",
 				"common_orders": "Mexican food, Pad Thai, Velvet Taco",
 				"other_services": "No",
@@ -196,7 +210,7 @@ $(document).ready(function() {
 
 	var user = {
 		"instant": "",
-		"groceries": "",
+		"more": "",
 		"subscription": "",
 		"customer": [],
 		"fee": 10000
@@ -349,7 +363,7 @@ $(document).ready(function() {
 			if (v.subscription === user.subscription) {
 				score++;
 			}
-			if (v.groceries === user.groceries) {
+			if (v.more === user.more) {
 				score++;
 			}
 			if (v.fee[1] > user.fee) {
@@ -383,17 +397,13 @@ $(document).ready(function() {
 		// check which question was answered, then update the user object based on that
 		switch(question) {
 			case "instant":
-				if (thisObj.closest(".answerBlock").find(".checked").index() === -1) {
-					user.instant = "";
-				} else {
-					user.instant = (thisObj.closest(".answerBlock").find(".checked").attr("data-answer") === "true");
-				}
+				user.instant = parseInt(thisObj.text());
 				break;
-			case "groceries":
+			case "more":
 				if (thisObj.closest(".answerBlock").find(".checked").index() === -1) {
-					user.groceries = "";
+					user.more = "";
 				} else {
-					user.groceries = (thisObj.closest(".answerBlock").find(".checked").attr("data-answer") === "true");
+					user.more = (thisObj.closest(".answerBlock").find(".checked").attr("data-answer") === "true");
 				}
 				break;
 			case "subscription":
@@ -438,6 +448,7 @@ $(document).ready(function() {
 
 	$(".viewAll").click(function() {
 		$("#servicesBlock nav button").addClass("noShow");
+		$("#best").addClass("noShow");
 		displayServices(services);
 	});
 
@@ -465,6 +476,7 @@ $(document).ready(function() {
 			questionNumber++;
 		} else if (direction === "previous") {
 			questionNumber--;
+			$("#questionsNav .viewResults").addClass("noShow");
 		} else {
 			findAreaMatch();
 		}
@@ -475,9 +487,19 @@ $(document).ready(function() {
 			$("#previous").removeClass("noShow");
 		}
 
+		if (questionNumber === questionLength - 1 ) {
+			$(".viewResults").removeClass("noShow");
+		}
+
+		$(".viewResults").click(function() {
+			findAreaMatch();
+		});
+
 		$(".question").addClass("inactiveQuestion");
 
 		$(".question").eq(questionNumber).removeClass("inactiveQuestion").addClass("activeQuestion");
+
+		$("#progressBar").width((questionNumber / (questionLength - 1)) * 100 + "%" );
 
 	}
 
@@ -512,7 +534,14 @@ $(document).ready(function() {
 		$("#best").removeClass("noShow");
 		$(".retake").removeClass("noShow");
 
+		console.log(bestMatch);
+
 		displayServices(bestMatch);
+
+		if (bestMatch.length === 0) {
+			$("#servicesBlock").prepend("<h5>None of the couriers service the zip code you provided.</h5>");
+			$("#best").addClass("noShow");
+		}
 
 	}
 
@@ -525,9 +554,11 @@ $(document).ready(function() {
 			$(".viewAll").removeClass("noShow");
 		}
 
+
+
 		$("#servicesBlock").removeClass("noShow");
 
-		var serviceTop = $("#services").offset().top;
+		var serviceTop = $("#servicesBlock").offset().top;
 		$("html, body").animate({
 			scrollTop: serviceTop - 50
 		}, 250);
@@ -546,6 +577,15 @@ $(document).ready(function() {
 				return d.name + " logo";
 			});
 
+		services.append("a")
+			.attr("href", function(d) {
+				return d.copy.weburl;
+			})
+			.attr("target", "_blank")
+			.text(function(d) {
+				return d.copy.website;
+			});
+
 		var content = services.append("div")
 			.attr("class", "content clearFix");
 
@@ -554,51 +594,46 @@ $(document).ready(function() {
 
 		details.append("p")
 			.html(function(d) {
-				return d.copy.description;
+				return "<span class='label'>Why you should use: </span>" + d.copy.description;
 			});
 
 		details.append("p")
 			.html(function(d) {
-				return "<strong>Schedule: </strong>" + d.copy.schedule;
+				return "<span class='label'>Schedule: </span>" + d.copy.schedule;
 			});
 
 		details.append("p")
 			.html(function(d) {
-				return "<strong>Common orders: </strong>" + d.copy.common_orders;
+				return "<span class='label'>Common orders: </span>" + d.copy.common_orders;
 			});
 
 		details.append("p")
 			.html(function(d) {
-				return "<strong>Common orders: </strong>" + d.copy.other_services;
+				return "<span class='label'>Other services: </span>" + d.copy.other_services;
 			});
 
 
 		var periphs = content.append("div")
 			.attr("class", "periphs");
 
-		periphs.append("h6").text("Fees");
-		periphs.append("p").text(function(d) {
-			return d.copy.fees;
+		periphs.append("p").html(function(d) {
+			return "<span class='label'>Fees: </span>" + d.copy.fees;
 		});
 
-		periphs.append("h6").text("Typical meal $");
-		periphs.append("p").text(function(d){
-			return d.copy.typical_meal;
+		periphs.append("p").html(function(d){
+			return "<span class='label'>Typical meal cost: </span>" + d.copy.typical_meal;
 		});
 
-		periphs.append("h6").text("Delivery time");
-		periphs.append("p").text(function(d) {
-			return d.copy.time;
+		periphs.append("p").html(function(d) {
+			return "<span class='label'>Delivery time: </span>" + d.copy.time;
 		});
 
-		periphs.append("h6").text("Instant delivery");
-		periphs.append("p").text(function(d) {
-			return d.copy.instant_delivery;
+		periphs.append("p").html(function(d) {
+			return "<span class='label'>Instant delivery: </span>" + d.copy.instant_delivery;
 		});
 
-		periphs.append("h6").text("Subscription");
-		periphs.append("p").text(function(d) {
-			return d.copy.subscription;
+		periphs.append("p").html(function(d) {
+			return "<span class='label'>Subscription offered: </span>" + d.copy.subscription;
 		});
 
 		content.append("p").attr("class", "disclaimer")
@@ -620,16 +655,19 @@ $(document).ready(function() {
 
 
 	function setCardHeights() {
-		var h = 0;
 
-		console.log($("#questions").height());
+		if ($(window).width() > 700) {
+			var h = 0;
 
-		$(".service").each(function() {
-			console.log($(this).outerHeight());
-			h = h > $(this).outerHeight() ? h : $(this).outerHeight();
-		});
+			console.log($("#questions").height());
 
-		$(".service").css("min-height", h + 30);
+			$(".service").each(function() {
+				console.log($(this).outerHeight());
+				h = h > $(this).outerHeight() ? h : $(this).outerHeight();
+			});
+
+			$(".service").css("min-height", h + 30);
+		}
 
 	}
 
@@ -651,12 +689,17 @@ $(document).ready(function() {
 			scrollTop: questionsTop - 50
 		}, 250);
 
-		//resets the question counter to 0, hides the previous button
+		// resets the question counter to 0, resets all answers to inactive,
+		// resets the progress bar, hides the previous button, hides all validator
+		// text, hides the view results button
 		questionNumber = 0;
 		$(".question").addClass("inactiveQuestion");
 		$(".question").eq(questionNumber).removeClass("inactiveQuestion").addClass("activeQuestion");
 		$("#previous").addClass("noShow");
 		$(".validator").addClass("noShow");
+		$(".viewResults").addClass("noShow");
+		$("#progressBar").width((questionNumber / (questionLength - 1)) * 100 + "%" );
+
 
 		// clear the input fields
 		$("#zip").val("");
@@ -667,7 +710,7 @@ $(document).ready(function() {
 
 		// clear the user object
 		user.instant = "";
-		user.groceries = "";
+		user.more = "";
 		user.subscription = "";
 		user.customer = [];
 		user.fee = 10000;

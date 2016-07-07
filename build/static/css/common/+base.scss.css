@@ -291,10 +291,28 @@ VI. STORY HEAD, BYLINES AND INTRO
 -------------------------------------------
 */
 #storyHead {
+  font-family: Merriweather, Georgia, Times, serif;
   margin: 4.8rem auto 2.4rem auto;
   text-align: center;
   color: #212121;
-  max-width: 1000px; }
+  max-width: 1000px;
+  position: relative;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  top: 0;
+  margin-bottom: 0vw;
+  width: 95%;
+  -webkit-transtion: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out; }
+  #storyHead.moved {
+    top: -10vw;
+    margin-bottom: -10vw; }
+  @media (max-width: 500px) {
+    #storyHead.moved {
+      top: -20vw;
+      margin-bottom: -20vw; } }
 
 #storyHead h1 {
   font-size: 6.4rem;

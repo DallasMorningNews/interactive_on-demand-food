@@ -331,10 +331,29 @@ VI. STORY HEAD, BYLINES AND INTRO
 */
 
 #storyHead {
+    font-family: Merriweather, Georgia, Times, serif;
   margin: 4.8rem auto 2.4rem auto;
   text-align: center;
   color: #212121;
   max-width: 1000px;
+  position: relative;
+  padding: 20px;
+  background-color: rgba(255,255,255,.9);
+  top: 0;
+  margin-bottom: 0vw;
+  width: 95%;
+  @include transition(all, 1s, ease-out);
+  &.moved {
+      top: -10vw;
+      margin-bottom: -10vw;
+  }
+  @media (max-width: 500px) {
+      &.moved {
+          top: -20vw;
+          margin-bottom: -20vw;
+      }
+  }
+
 }
 #storyHead h1 {
   font-size: 6.4rem;
